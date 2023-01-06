@@ -1,0 +1,9 @@
+{
+	"name": "React Date Calculator",
+	"version": "0.2.0",
+	"description": "Calculates the days until a deadline and days between dates. Includes option to exclude weekends and business holidays.",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "index.html"
+	}
+}
