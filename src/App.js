@@ -2,6 +2,7 @@ import React from 'react';
 import modeButton from './mode-button.png';
 import './App.css';
 import moment from "moment";
+import ToDate from './ToDate';
 
 /* MUI IMPORTS */
 // import Box from "@mui/material/Box";
@@ -27,7 +28,7 @@ function App() {
 				<header className="App-header">
 					<img src={modeButton} className="logoButton" alt="Change mode." />
 				</header>
-				<div className="calendarInput">
+				{/* <div className="calendarInput">
 					<h1>Enter start date</h1>
 					<LocalizationProvider dateAdapter={AdapterMoment}>
 						<DatePicker
@@ -48,7 +49,8 @@ function App() {
 							renderInput={(params) => <TextField size="small" {...params} />}
 						/>
 					</LocalizationProvider>
-				</div>
+				</div> */}
+				<ToDate />
 			</div>
 		</ThemeProvider>
 	);
