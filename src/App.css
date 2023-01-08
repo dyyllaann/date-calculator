@@ -82,3 +82,21 @@ h1 {
   align-self: stretch;
   flex-grow: 0;
 }
+
+.optionsContainer {
+  border-bottom: 1px solid #49454F;
+}
+
+.optionsWeekend, .optionsHoliday {
+  margin: 12px 24px 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.optionsActions {
+  margin: 12px 24px 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
