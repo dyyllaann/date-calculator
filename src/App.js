@@ -25,9 +25,9 @@ function App() {
   return (
 		<ThemeProvider theme={darkTheme}>
 			<div className="App">
-				<header className="App-header">
-					<img src={modeButton} className="logoButton" alt="Change mode." />
-				</header>
+				<section className="appHeader">
+						<img src={modeButton} className="logoButton" alt="Change mode." />
+				</section>
 				{/* <div className="calendarInput">
 					<h1>Enter start date</h1>
 					<LocalizationProvider dateAdapter={AdapterMoment}>

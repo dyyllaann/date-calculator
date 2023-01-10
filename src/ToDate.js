@@ -74,6 +74,11 @@ function ToDate() {
           <Button className="optionsButton">OK</Button>
         </div>
       </div>
+      <div className="outputContainer">
+        <h1>
+          Friday, May 23, 2023
+        </h1>
+      </div>
     </section>
   )
 }
