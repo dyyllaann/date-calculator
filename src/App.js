@@ -3,6 +3,7 @@ import modeButton from './mode-button.png';
 import './App.css';
 import moment from "moment";
 import ToDate from './ToDate';
+import ToDays from './ToDays';
 
 /* MUI IMPORTS */
 // import Box from "@mui/material/Box";
@@ -28,29 +29,8 @@ function App() {
 				<section className="appHeader">
 						<img src={modeButton} className="logoButton" alt="Change mode." />
 				</section>
-				{/* <div className="calendarInput">
-					<h1>Enter start date</h1>
-					<LocalizationProvider dateAdapter={AdapterMoment}>
-						<DatePicker
-							className="datePicker"
-							label="Date"
-							value={null}
-							renderInput={(params) => <TextField size="small" {...params} />}
-						/>
-					</LocalizationProvider>
-				</div>
-				<div className="calendarInput">
-					<h1>Enter end date</h1>
-					<LocalizationProvider dateAdapter={AdapterMoment}>
-						<DatePicker
-							className="datePicker"
-							label="Date"
-							value={null}
-							renderInput={(params) => <TextField size="small" {...params} />}
-						/>
-					</LocalizationProvider>
-				</div> */}
-				<ToDate />
+				{/* <ToDate /> */}
+				<ToDays />
 			</div>
 		</ThemeProvider>
 	);

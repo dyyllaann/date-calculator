@@ -48,10 +48,6 @@ function ToDate() {
             id="outlined-number"
             label="Number"
             type="number"
-            // InputLabelProps={{
-            //   shrink: true,
-            // }}
-            // variant="outlined"
           />
         </div>
       </div>
