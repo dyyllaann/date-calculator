@@ -22,61 +22,51 @@ const darkTheme = createTheme({
 
 function ToDate() {
   return (
-    <section>
-      <div className="inputContainer">
-        <div className="inputHeader">
-          <h1>Enter start date</h1>
-        </div>
-        <div className="inputInput">
-          <LocalizationProvider dateAdapter={AdapterMoment}>
-            <DatePicker     
-              className="input"
-              label="Date"
-              value={null}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-        </div>
-      </div>
-      <div className="inputContainer">
-        <div className="inputHeader">
-          <h1>Enter number of days</h1>
-        </div>
-        <div className="inputInput">
-          <TextField
-            className="input"
-            id="outlined-number"
-            label="Number"
-            type="number"
-          />
-        </div>
-      </div>
-      <div className="optionsContainer">
-        <div className="optionsWeekend">
-          <Switch />
-          <Typography
-            color="text.primary"
-          >Skip weekends</Typography>
-        </div>
-        <div className="optionsHoliday">
-          <Switch />
-          <Typography
-            color="text.primary"
-            justifyContent="center"
-          >Skip holidays</Typography>
-        </div>
-        <div className="optionsActions">
-          <Button className="optionsButton">Settings</Button>
-          <Button className="optionsButton">OK</Button>
-        </div>
-      </div>
-      <div className="outputContainer">
-        <h1>
-          Friday, May 23, 2023
-        </h1>
-      </div>
-    </section>
-  )
+		<section className="flex-column">
+			<div className="input-container">
+				<span className="section-title">Enter start date</span>
+				<LocalizationProvider dateAdapter={AdapterMoment}>
+					<DatePicker
+						className="input-container--input"
+						label="Date"
+						value={null}
+						renderInput={(params) => <TextField {...params} sx={{ mt: 3.75 }} />}
+					/>
+				</LocalizationProvider>
+			</div>
+			<div className="input-container">
+				<span className="section-title">Enter number of days</span>
+				<TextField
+					sx={{ mt: 3 }}
+					className="input-container--input"
+					id="outlined-number"
+					label="Number"
+					type="number"
+				/>
+			</div>
+			<div className="options-container">
+				<div className="options-container--option">
+					<Switch />
+					<Typography color="text.primary">Skip weekends</Typography>
+				</div>
+				<div className="options-container--option">
+					<Switch />
+					<Typography color="text.primary" justifyContent="center">
+						Skip holidays
+					</Typography>
+				</div>
+				<div className="options-container--actions">
+					<Button className="optionsButton">Settings</Button>
+					<Button className="optionsButton">OK</Button>
+				</div>
+			</div>
+			<div className="output-container">
+				<span className="section-title output-container--output">
+					Friday, March 21, 2023
+				</span>
+			</div>
+		</section>
+	);
 }
 
 export default ToDate;
