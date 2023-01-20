@@ -1,7 +1,5 @@
 .App {
   /* width: 360px; */
-  display: flex;
-  flex-direction: column;
   height: 100vh;
   border-radius: 28px;
   background-color: #302d38;
@@ -27,34 +25,38 @@
   margin: 12px 0 9px;
 }
 
-.flex-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.App-link {
+  color: #61dafb;
 }
 
-.section-title {
+h1 {
   color: #E6E1E5;
   font-size: 2em;
+  text-align: left;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.25em;
 }
 
-span.section-title {
-  text-align: left;
-  margin-top: 18px;
-  display: inline-block;
-  width: 100%;
-}
-
-.input-container {
-  margin: 0 24px;
+.inputInput {
+  margin: 18px 24px;
 }
 
 /* Input */
-.input-container--input {
+.inputHeader {
+  border-bottom: 1px solid #49454F;
+}
+
+h1 {
+  margin: 18px 24px;
+}
+
+.input {
   width: 100%;
+}
+
+img {
+  border: none;
 }
 
 /* Mode Button */
@@ -70,6 +72,7 @@ span.section-title {
   align-items: center;
   padding: 8px 12px;
   gap: 10px;
+  /* width: 360px; */
   height: 58px;
   border-bottom: 1px solid #49454F;
 }
@@ -82,34 +85,30 @@ span.section-title {
   flex-grow: 0;
 }
 
-.options-container {
+.optionsContainer {
   border-bottom: 1px solid #49454F;
-  margin: 12px 0;
 }
 
-.options-container--option {
-  margin: 0 24px 0 18px;
+.optionsWeekend, .optionsHoliday {
+  margin: 12px 24px 12px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.options-container--actions {
+.optionsActions {
   margin: 12px 24px 12px 18px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.output-container {
-  flex: 1;
+.outputContainer {
   display: flex;
-  text-align: center;
 }
 
-
-span.output-container--output {
-  margin: auto 0;
+.outputContainer > h1 {
+  margin-bottom: auto;
   flex: 1;
   text-align: center;
 }
