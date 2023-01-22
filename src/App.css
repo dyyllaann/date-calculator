@@ -57,6 +57,10 @@ span.section-title {
   width: 100%;
 }
 
+.input-container--days-input {
+  margin-top: 1.25em;
+}
+
 /* Mode Button */
 .mode-button {
   box-sizing: border-box;

@@ -34,10 +34,10 @@ function ToDate() {
 					/>
 				</LocalizationProvider>
 			</div>
-			<div className="input-container">
+			<div className="input-container input-container--days-input">
 				<span className="section-title">Enter number of days</span>
 				<TextField
-					sx={{ mt: 3 }}
+					sx={{ mt: 3.75 }}
 					className="input-container--input"
 					id="outlined-number"
 					label="Number"
