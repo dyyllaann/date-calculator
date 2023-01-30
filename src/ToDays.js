@@ -36,7 +36,7 @@ function ToDays() {
 					/>
 				</LocalizationProvider>
 			</div>
-			<div className="input-container">
+			<div className="input-container input-container--end-date-input">
 				<span className="section-title">Enter end date</span>
 				<LocalizationProvider dateAdapter={AdapterMoment}>
 					<DatePicker
