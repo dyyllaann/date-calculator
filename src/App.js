@@ -26,8 +26,8 @@ function App() {
 				<section className="appHeader">
 					<img src={modeButton} className="logoButton" alt="Change mode." />
 				</section>
-				<ToDate />
-				{/* <ToDays /> */}
+				{/* <ToDate /> */}
+				<ToDays />
 			</div>
 		</ThemeProvider>
 	);
