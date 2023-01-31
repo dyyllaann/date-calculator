@@ -20,14 +20,27 @@ const darkTheme = createTheme({
 });
 
 function App() {
+	const [view, setView] = React.useState("toDate");
+
+	const clickHandler = () => {
+		if (view === "toDate") {
+			setView("toDays");
+		} else {
+			setView("toDate");
+		}
+	};
+
 	return (
 		<ThemeProvider theme={darkTheme}>
 			<div className="App">
 				<section className="appHeader">
-					<img src={modeButton} className="logoButton" alt="Change mode." />
+					<img src={modeButton} className="logoButton" alt="Change mode." onClick={clickHandler} />
 				</section>
-				{/* <ToDate /> */}
-				<ToDays />
+				{view === "toDate" ? (
+					<ToDate setView={setView} />
+				) : (
+					<ToDays setView={setView} />
+				)}
 			</div>
 		</ThemeProvider>
 	);
