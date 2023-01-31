@@ -1,17 +1,11 @@
 import React from "react";
 import modeButton from "./mode-button.png";
 import "./App.css";
-import moment from "moment";
 import ToDate from "./ToDate";
 import ToDays from "./ToDays";
 
 /* MUI IMPORTS */
-import TextField from "@mui/material/TextField";
-import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Typography } from "@mui/material";
 
 const darkTheme = createTheme({
 	palette: {
