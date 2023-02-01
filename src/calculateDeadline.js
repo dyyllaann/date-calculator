@@ -42,5 +42,6 @@ export default function calculateDeadline(date, dayNum, skipWeekends, skipHolida
 			}
 		}
 	}
+	
 	return endDate;
 }
