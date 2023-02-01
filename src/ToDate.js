@@ -25,11 +25,11 @@ function ToDate() {
 	const [skipWeekends, setSkipWeekends] = React.useState(false);
 	const [skipHolidays, setSkipHolidays] = React.useState(false);
 
-	const handleStartDateChange = (newValue) => {
+	const startDateHandler = (newValue) => {
 		setStartDate(newValue);
 	};
 
-	const clickHandler = () => {
+	const optionsHandler = () => {
 		let date = calculateDeadline(startDate, days, skipWeekends, skipHolidays);
 		const formatted = moment(date).format("dddd, MMMM Do YYYY");
 		setResult(formatted);
@@ -44,7 +44,7 @@ function ToDate() {
 						className="input-container--input"
 						label="Date"
 						value={startDate || null}
-						onChange={handleStartDateChange}
+						onChange={startDateHandler}
 						renderInput={(params) => <TextField {...params} sx={{ mt: 3.75 }} />}
 					/>
 				</LocalizationProvider>
@@ -79,7 +79,7 @@ function ToDate() {
 				</div>
 				<div className="options-container--actions">
 					<Button className="optionsButton">Settings</Button>
-					<Button className="optionsButton" onClick={clickHandler}>OK</Button>
+					<Button className="optionsButton" onClick={optionsHandler}>OK</Button>
 				</div>
 			</div>
 			<div className="output-container">
