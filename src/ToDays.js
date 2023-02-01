@@ -1,17 +1,15 @@
 import React from "react";
-import modeButton from "./mode-button.png";
 import "./App.css";
 import moment from "moment";
+import calculcateDays from "./calculateDays";
 
 /* MUI IMPORTS */
-// import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-// import DeleteIcon from "@mui/icons-material/Delete";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import { Switch, Typography } from "@mui/material";
 
 const darkTheme = createTheme({
@@ -21,6 +19,25 @@ const darkTheme = createTheme({
 });
 
 function ToDays() {
+	const [startDate, setStartDate] = React.useState(null);
+	const [endDate, setEndDate] = React.useState(null);
+	const [result, setResult] = React.useState(null);
+	const [skipWeekends, setSkipWeekends] = React.useState(false);
+	const [skipHolidays, setSkipHolidays] = React.useState(false);
+
+	const startDateHandler = (newValue) => {
+		setStartDate(newValue);
+	};
+
+	const endDateHandler = (newValue) => {
+		setEndDate(newValue);
+	};
+
+	const optionsHandler = () => {
+		let days = calculcateDays(startDate, endDate, skipWeekends, skipHolidays);
+		setResult(days);
+	};
+
 	return (
 		<section className="flex-column">
 			<div className="input-container">
@@ -29,7 +46,8 @@ function ToDays() {
 					<DatePicker
 						className="input-container--input"
 						label="Date"
-						value={null}
+						value={startDate || null}
+						onChange={startDateHandler}
 						renderInput={(params) => (
 							<TextField {...params} sx={{ mt: 3.75 }} />
 						)}
@@ -42,7 +60,8 @@ function ToDays() {
 					<DatePicker
 						className="input-container--input"
 						label="Date"
-						value={null}
+						value={endDate || null}
+						onChange={endDateHandler}
 						renderInput={(params) => (
 							<TextField {...params} sx={{ mt: 3.75 }} />
 						)}
@@ -50,11 +69,13 @@ function ToDays() {
 				</LocalizationProvider>
 			</div>
 			<div className="options-container">
-				<div className="options-container--option">
+				<div className="options-container--option hidden">
 					<Switch />
-					<Typography color="text.primary">Skip weekends</Typography>
+					<Typography color="text.primary">
+						Skip weekends
+					</Typography>
 				</div>
-				<div className="options-container--option">
+				<div className="options-container--option hidden">
 					<Switch />
 					<Typography color="text.primary" justifyContent="center">
 						Skip holidays
@@ -62,13 +83,11 @@ function ToDays() {
 				</div>
 				<div className="options-container--actions">
 					<Button className="optionsButton">Settings</Button>
-					<Button className="optionsButton">OK</Button>
+					<Button className="optionsButton" onClick={optionsHandler}>OK</Button>
 				</div>
 			</div>
 			<div className="output-container">
-				<span className="section-title output-container--output">
-					47 Days
-				</span>
+				<span className="section-title output-container--output">{result}</span>
 			</div>
 		</section>
 	);

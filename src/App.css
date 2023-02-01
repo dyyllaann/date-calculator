@@ -107,6 +107,10 @@ span.section-title {
   justify-content: flex-end;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .output-container {
   flex: 1;
   display: flex;
