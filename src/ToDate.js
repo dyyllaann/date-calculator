@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import moment from "moment";
-import holidays from "./holidays.json";
+import calculateDeadline from "./calculateDeadline";
 
 /* MUI IMPORTS */
 import TextField from '@mui/material/TextField';
@@ -30,52 +30,10 @@ function ToDate() {
 	};
 
 	const clickHandler = () => {
-		let date = calculateDeadline(startDate, days);
+		let date = calculateDeadline(startDate, days, skipWeekends, skipHolidays);
 		const formatted = moment(date).format("dddd, MMMM Do YYYY");
 		setResult(formatted);
 	};
-
-function calculateDeadline(date, dayNum) {
-	let endDate = moment(date);
-
-	function dayAdd() {
-		endDate.add(1, "Days");
-		dayNum -= 1;
-	}
-
-	function saturdayCheck() {
-		if (endDate.weekday() === 6) {
-			dayNum += 1;
-		}
-	}
-
-	function sundayCheck() {
-		if (endDate.weekday() === 0) {
-			dayNum += 1;
-		}
-	}
-
-	function holidayCheck() {
-		if (Object.values(holidays[0][endDate.year()]).includes(endDate.dayOfYear())) {
-			dayNum += 1;
-			dayAdd();
-		}
-	}
-
-	for (var i in { dayNum }) {
-		while (dayNum > 0) {
-			dayAdd();
-			if (skipWeekends) {
-				saturdayCheck();
-				sundayCheck();
-			}
-			if (skipHolidays) {
-				holidayCheck();
-			}
-		}
-	}
-	return endDate;
-}
 
   return (
 		<section className="flex-column">
