@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import moment from "moment";
+import holidays from "./holidays.json";
 
 /* MUI IMPORTS */
 import TextField from '@mui/material/TextField';
@@ -16,25 +17,6 @@ const darkTheme = createTheme({
 		mode: "dark",
 	},
 });
-
-const holidays = [
-  {
-    2023: {
-		"New Year's Day": 2,						
-    "Martin Luther King Jr. Day": 16,
-    "President's Day": 51,
-    "Memorial Day": 149,
-		"Juneteenth": 170,
-    "Independence Day": 185,
-    "Labor Day": 247,
-		"Columbus Day": 282,
-    "Veteran's Day": 314,
-    "Thanksgiving Day": 327,
-    "Native American Heritage Day": 332,
-    "Christmas Day": 359
-    }
-  }
-];
 
 function ToDate() {
 	const [startDate, setStartDate] = React.useState(null);
