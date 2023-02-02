@@ -1,6 +1,6 @@
 .App {
   min-width: 360px;
-  height: 100vh;
+  height: 600px;
   display: flex;
   flex-direction: column;
   border-radius: 28px;
@@ -90,7 +90,7 @@ span.section-title {
   flex-direction: column;
   border-bottom: 1px solid #49454F;
   margin-top: 24px;
-  gap: 12px;
+  gap: 6px;
 }
 
 .options-container--option {

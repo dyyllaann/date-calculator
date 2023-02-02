@@ -40,9 +40,7 @@ function ToDays() {
 						label="Date"
 						value={startDate || null}
 						onChange={startDateHandler}
-						renderInput={(params) => (
-							<TextField {...params} sx={{ mt: 3.75 }} />
-						)}
+						renderInput={(params) => <TextField {...params} sx={{ mt: 2 }} />}
 					/>
 				</LocalizationProvider>
 			</div>
@@ -54,28 +52,28 @@ function ToDays() {
 						label="Date"
 						value={endDate || null}
 						onChange={endDateHandler}
-						renderInput={(params) => (
-							<TextField {...params} sx={{ mt: 3.75 }} />
-						)}
+						renderInput={(params) => <TextField {...params} sx={{ mt: 2 }} />}
 					/>
 				</LocalizationProvider>
 			</div>
 			<div className="options-container">
 				<div className="options-container--option hidden">
 					<Switch />
-					<Typography color="text.primary">
-						Skip weekends
-					</Typography>
+					<Typography color="text.primary">Skip weekends</Typography>
 				</div>
 				<div className="options-container--option hidden">
 					<Switch />
-					<Typography color="text.primary" justifyContent="center">
-						Skip holidays
-					</Typography>
+					<Typography color="text.primary">Skip holidays</Typography>
+				</div>
+				<div className="options-container--option hidden">
+					<Switch/>
+					<Typography color="text.primary">Next Business Day</Typography>
 				</div>
 				<div className="options-container--actions">
 					<Button className="optionsButton">Settings</Button>
-					<Button className="optionsButton" onClick={optionsHandler}>OK</Button>
+					<Button className="optionsButton" onClick={optionsHandler}>
+						OK
+					</Button>
 				</div>
 			</div>
 			<div className="output-container">

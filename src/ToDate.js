@@ -17,6 +17,7 @@ function ToDate() {
 	const [result, setResult] = React.useState(null);
 	const [skipWeekends, setSkipWeekends] = React.useState(false);
 	const [skipHolidays, setSkipHolidays] = React.useState(false);
+	const [nextBusinessDay, setNextBusinessDay] = React.useState(false);
 
 	const startDateHandler = (newValue) => {
 		setStartDate(newValue);
@@ -38,14 +39,14 @@ function ToDate() {
 						label="Date"
 						value={startDate || null}
 						onChange={startDateHandler}
-						renderInput={(params) => <TextField {...params} sx={{ mt: 3.75 }} />}
+						renderInput={(params) => <TextField {...params} sx={{ mt: 2 }} />}
 					/>
 				</LocalizationProvider>
 			</div>
 			<div className="input-container input-container--days-input">
 				<span className="section-title">Enter number of days</span>
 				<TextField
-					sx={{ mt: 3.75 }}
+					sx={{ mt: 2 }}
 					className="input-container--input"
 					id="outlined-number"
 					label="Number"
@@ -66,8 +67,17 @@ function ToDate() {
 						checked={skipHolidays}
 						onChange={() => setSkipHolidays(!skipHolidays)}
 					/>
-					<Typography color="text.primary" justifyContent="center">
+					<Typography color="text.primary">
 						Skip holidays
+					</Typography>
+				</div>
+				<div className="options-container--option">
+					<Switch 
+						checked={nextBusinessDay}
+						onChange={() => setNextBusinessDay(!nextBusinessDay)}
+					/>
+					<Typography color="text.primary">
+						Next Business Day
 					</Typography>
 				</div>
 				<div className="options-container--actions">
