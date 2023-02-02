@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import moment from "moment";
 import calculcateDays from "./calculateDays";
 
 /* MUI IMPORTS */
@@ -9,21 +8,14 @@ import Button from "@mui/material/Button";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { createTheme } from "@mui/material/styles";
 import { Switch, Typography } from "@mui/material";
-
-const darkTheme = createTheme({
-	palette: {
-		mode: "dark",
-	},
-});
 
 function ToDays() {
 	const [startDate, setStartDate] = React.useState(null);
 	const [endDate, setEndDate] = React.useState(null);
 	const [result, setResult] = React.useState(null);
-	const [skipWeekends, setSkipWeekends] = React.useState(false);
-	const [skipHolidays, setSkipHolidays] = React.useState(false);
+	// const [skipWeekends, setSkipWeekends] = React.useState(false);
+	// const [skipHolidays, setSkipHolidays] = React.useState(false);
 
 	const startDateHandler = (newValue) => {
 		setStartDate(newValue);
@@ -34,7 +26,7 @@ function ToDays() {
 	};
 
 	const optionsHandler = () => {
-		let days = calculcateDays(startDate, endDate, skipWeekends, skipHolidays);
+		let days = calculcateDays(startDate, endDate);
 		setResult(days);
 	};
 

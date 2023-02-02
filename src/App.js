@@ -27,7 +27,7 @@ function App() {
 	return (
 		<ThemeProvider theme={darkTheme}>
 			<div className="App">
-				<section className="appHeader">
+				<section className="App-header">
 					<img src={modeButton} className="logoButton" alt="Change mode." onClick={clickHandler} />
 				</section>
 				{view === "toDate" ? (

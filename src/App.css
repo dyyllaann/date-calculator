@@ -1,24 +1,24 @@
 .App {
-  /* width: 360px; */
+  min-width: 360px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   border-radius: 28px;
   background-color: #302d38;
   text-align: center;
 }
 
-.appHeader {
+.App-header {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
   border-bottom: 1px solid #49454F;
 }
 
-.appHeader>img {
+.App-header > img {
   margin: 12px 0 9px;
 }
 

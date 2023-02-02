@@ -1,7 +1,4 @@
-import moment from "moment";
-import holidays from "./holidays.json";
-
-export default function calculateDeadline(startDate, endDate, skipWeekends, skipHolidays) {
+export default function calculateDeadline(startDate, endDate) {
 	let daysBetween = 0;
 	daysBetween = endDate.diff(startDate, "days");
 	return daysBetween;

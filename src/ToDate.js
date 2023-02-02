@@ -9,14 +9,7 @@ import Button from '@mui/material/Button';
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { createTheme } from "@mui/material/styles";
 import { Switch, Typography } from "@mui/material";
-
-const darkTheme = createTheme({
-	palette: {
-		mode: "dark",
-	},
-});
 
 function ToDate() {
 	const [startDate, setStartDate] = React.useState(null);

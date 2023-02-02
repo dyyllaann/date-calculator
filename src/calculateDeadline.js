@@ -30,16 +30,14 @@ export default function calculateDeadline(date, dayNum, skipWeekends, skipHolida
 		}
 	}
 
-	for (var i in { dayNum }) {
-		while (dayNum > 0) {
-			dayAdd();
-			if (skipWeekends) {
-				saturdayCheck();
-				sundayCheck();
-			}
-			if (skipHolidays) {
-				holidayCheck();
-			}
+	while (dayNum > 0) {
+		dayAdd();
+		if (skipWeekends) {
+			saturdayCheck();
+			sundayCheck();
+		}
+		if (skipHolidays) {
+			holidayCheck();
 		}
 	}
 	
