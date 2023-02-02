@@ -24,7 +24,7 @@ function ToDate() {
 	};
 
 	const optionsHandler = () => {
-		let date = calculateDeadline(startDate, days, skipWeekends, skipHolidays);
+		let date = calculateDeadline(startDate, days, skipWeekends, skipHolidays, nextBusinessDay);
 		const formatted = moment(date).format("dddd, MMMM Do YYYY");
 		setResult(formatted);
 	};
