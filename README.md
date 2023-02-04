@@ -10,8 +10,8 @@ Date Calculator is a Google Chrome Extension that allows users to quickly calcul
 * [Links](#links)
 
 ## Screenshots
-!img[First view of app](https://lh3.googleusercontent.com/fk0iknxsCnF0nQg1mt54ZWOqNjuGaftpBnCIjc3Lau0Ny3d-vLaZI2vLMwVCYm5Jc0aQ1pXXoxkedRWkGHSELEaWZ58=w640-h400-e365-rj-sc0x00ffffff)
-!img[Second view of app](https://lh3.googleusercontent.com/E5kw5--B1pM1OPWwlNgh5Q35xA2SJQvAwMmOpD7LTLc2pqhzoCgRTCemA1me5pezmpr5zHJ1nN8E5O6E1gA8fegp0gs=w640-h400-e365-rj-sc0x00ffffff)
+![First view of app](https://lh3.googleusercontent.com/fk0iknxsCnF0nQg1mt54ZWOqNjuGaftpBnCIjc3Lau0Ny3d-vLaZI2vLMwVCYm5Jc0aQ1pXXoxkedRWkGHSELEaWZ58=w640-h400-e365-rj-sc0x00ffffff)
+![Second view of app](https://lh3.googleusercontent.com/E5kw5--B1pM1OPWwlNgh5Q35xA2SJQvAwMmOpD7LTLc2pqhzoCgRTCemA1me5pezmpr5zHJ1nN8E5O6E1gA8fegp0gs=w640-h400-e365-rj-sc0x00ffffff)
 
 ## Project Overview
 Date Calculator was created to make calculating deadlines for transactions easier. Date calculation was a repetive and time-consuming task in my real estate transactions, so I built this app to speed up the process. While this app is a useful time-saver for real estate agents, it can be useful for anyone that needs to quickly calculate dates. 
