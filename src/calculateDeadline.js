@@ -1,7 +1,7 @@
 import moment from "moment";
 import holidays from "./holidays.json";
 
-export default function calculateDeadline(date, dayNum, skipWeekends, skipHolidays, nextBusinessDay) {
+export default function calculateDeadline(date, dayNum, options) {
 	let endDate = moment(date);
 
 	function dayAdd() {
@@ -32,16 +32,16 @@ export default function calculateDeadline(date, dayNum, skipWeekends, skipHolida
 
 	while (dayNum > 0) {
 		dayAdd();
-		if (skipWeekends) {
+		if (options.skipWeekends === true) {
 			saturdayCheck();
 			sundayCheck();
 		}
-		if (skipHolidays) {
+		if (options.skipHolidays === true) {
 			holidayCheck();
 		}
 	}
 
-	if (nextBusinessDay) {
+	if (options.nextBusinessDay === true) {
 		if (endDate.weekday() === 6) {
 			endDate.add(2, "Days");
 		} else if (endDate.weekday() === 0) {

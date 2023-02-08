@@ -15,16 +15,23 @@ function ToDate() {
 	const [startDate, setStartDate] = React.useState(null);
 	const [days, setDays] = React.useState(null);
 	const [result, setResult] = React.useState(null);
-	const [skipWeekends, setSkipWeekends] = React.useState(false);
-	const [skipHolidays, setSkipHolidays] = React.useState(false);
-	const [nextBusinessDay, setNextBusinessDay] = React.useState(false);
+	// const [skipWeekends, setSkipWeekends] = React.useState(false);
+	// const [skipHolidays, setSkipHolidays] = React.useState(false);
+	// const [nextBusinessDay, setNextBusinessDay] = React.useState(false);
+
+	// implement-options
+	const [options, setOptions] = React.useState({
+		skipWeekends: false,
+		skipHolidays: false,
+		nextBusinessDay: false,
+	});
 
 	const startDateHandler = (newValue) => {
 		setStartDate(newValue);
 	};
 
 	const optionsHandler = () => {
-		let date = calculateDeadline(startDate, days, skipWeekends, skipHolidays, nextBusinessDay);
+		let date = calculateDeadline(startDate, days, options);
 		const formatted = moment(date).format("dddd, MMMM Do YYYY");
 		setResult(formatted);
 	};
@@ -58,14 +65,18 @@ function ToDate() {
 				<div className="options-container--option">
 					<Switch 
 						checked={skipWeekends}
-						onChange={() => setSkipWeekends(!skipWeekends)}
+						// onChange={() => setSkipWeekends(!skipWeekends)}
+						// implement-options
+						onChange={() => setOptions({ ...options, skipWeekends: !skipWeekends })}
 					/>
 					<Typography color="text.primary">Skip weekends</Typography>
 				</div>
 				<div className="options-container--option">
 					<Switch 
 						checked={skipHolidays}
-						onChange={() => setSkipHolidays(!skipHolidays)}
+						// onChange={() => setSkipHolidays(!skipHolidays)}
+						// implement-options
+						onChange={() => setOptions({ ...options, skipHolidays: !skipHolidays })}
 					/>
 					<Typography color="text.primary">
 						Skip holidays
@@ -74,7 +85,9 @@ function ToDate() {
 				<div className="options-container--option">
 					<Switch 
 						checked={nextBusinessDay}
-						onChange={() => setNextBusinessDay(!nextBusinessDay)}
+						// onChange={() => setNextBusinessDay(!nextBusinessDay)}
+						// implement-options
+						onChange={() => setOptions({ ...options, nextBusinessDay: !nextBusinessDay })}
 					/>
 					<Typography color="text.primary">
 						Next Business Day
