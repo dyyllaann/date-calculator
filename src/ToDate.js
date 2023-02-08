@@ -15,11 +15,6 @@ function ToDate() {
 	const [startDate, setStartDate] = React.useState(null);
 	const [days, setDays] = React.useState(null);
 	const [result, setResult] = React.useState(null);
-	// const [skipWeekends, setSkipWeekends] = React.useState(false);
-	// const [skipHolidays, setSkipHolidays] = React.useState(false);
-	// const [nextBusinessDay, setNextBusinessDay] = React.useState(false);
-
-	// implement-options
 	const [options, setOptions] = React.useState({
 		skipWeekends: false,
 		skipHolidays: false,
@@ -65,8 +60,6 @@ function ToDate() {
 				<div className="options-container--option">
 					<Switch 
 						checked={skipWeekends}
-						// onChange={() => setSkipWeekends(!skipWeekends)}
-						// implement-options
 						onChange={() => setOptions({ ...options, skipWeekends: !skipWeekends })}
 					/>
 					<Typography color="text.primary">Skip weekends</Typography>
@@ -74,8 +67,6 @@ function ToDate() {
 				<div className="options-container--option">
 					<Switch 
 						checked={skipHolidays}
-						// onChange={() => setSkipHolidays(!skipHolidays)}
-						// implement-options
 						onChange={() => setOptions({ ...options, skipHolidays: !skipHolidays })}
 					/>
 					<Typography color="text.primary">
@@ -85,8 +76,6 @@ function ToDate() {
 				<div className="options-container--option">
 					<Switch 
 						checked={nextBusinessDay}
-						// onChange={() => setNextBusinessDay(!nextBusinessDay)}
-						// implement-options
 						onChange={() => setOptions({ ...options, nextBusinessDay: !nextBusinessDay })}
 					/>
 					<Typography color="text.primary">
