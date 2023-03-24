@@ -77,7 +77,7 @@ function ToDays() {
 				</div>
 			</div>
 			<div className="output-container">
-				<span className="section-title output-container--output">{result}</span>
+				<span className="section-title output-container--output">{result} Days</span>
 			</div>
 		</section>
 	);
