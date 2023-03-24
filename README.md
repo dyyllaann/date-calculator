@@ -1,6 +1,12 @@
 # Date Calculator
 Date Calculator is a Google Chrome Extension that allows users to quickly calculate the number of days between dates, or the resulting date after a number of days. 
 
+# Version Update (v0.4.2)
+ * Implement light mode and dark mode based on browser preference
+ * Improve date picker display
+ * Format results
+ * Temporarily remove 'Settings' option
+
 ## Table of Contents
 * [Screenshots](#screenshots)
 * [Project Overview](#project-overview) 

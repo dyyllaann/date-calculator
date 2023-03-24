@@ -1,7 +1,7 @@
 {
-	"name": "Date Calculator 0.4.1",
+	"name": "Date Calculator 0.4.2",
 	"description": "Base Level Extension",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"manifest_version": 3,
 	"action": {
 		"default_popup": "index.html"
