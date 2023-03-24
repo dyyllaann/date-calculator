@@ -27,7 +27,7 @@ function ToDays() {
 
 	const optionsHandler = () => {
 		let days = calculcateDays(startDate, endDate);
-		setResult(days);
+		setResult(`${days} days`);
 	};
 
 	return (
@@ -77,7 +77,7 @@ function ToDays() {
 				</div>
 			</div>
 			<div className="output-container">
-				<span className="section-title output-container--output">{result} Days</span>
+				<span className="section-title output-container--output">{result}</span>
 			</div>
 		</section>
 	);

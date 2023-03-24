@@ -11,7 +11,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { Switch, Typography } from "@mui/material";
 
-function ToDate() {
+function ToDate(props) {
 	const [startDate, setStartDate] = React.useState(null);
 	const [days, setDays] = React.useState(null);
 	const [result, setResult] = React.useState(null);
@@ -34,7 +34,9 @@ function ToDate() {
   return (
 		<section className="flex-column">
 			<div className="input-container">
-				<span className="section-title">Enter start date</span>
+				<Typography color="text.primary" sx={{ fontSize: '2em' }}>
+					Enter start date
+				</Typography>
 				<LocalizationProvider dateAdapter={AdapterMoment}>
 					<DatePicker
 						className="input-container--input"
@@ -46,7 +48,9 @@ function ToDate() {
 				</LocalizationProvider>
 			</div>
 			<div className="input-container input-container--days-input">
-				<span className="section-title">Enter number of days</span>
+				<Typography color="text.primary" sx={{ fontSize: '2em' }}>
+					Enter number of days
+				</Typography>
 				<TextField
 					sx={{ mt: 2 }}
 					className="input-container--input"

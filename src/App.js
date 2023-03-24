@@ -6,15 +6,30 @@ import ToDays from "./ToDays";
 
 /* MUI IMPORTS */
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
-const darkTheme = createTheme({
-	palette: {
-		mode: "dark",
-	},
-});
+import { Box } from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function App() {
+	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+	
+	const theme = React.useMemo(
+		() =>
+			createTheme({
+				palette: {
+					mode: prefersDarkMode ? "dark" : "light",
+					background: {
+						default: prefersDarkMode ? "#302d38" : "#fafafa",
+					},
+					text: {
+						primary: prefersDarkMode ? "#e6e1e5" : "#302d38",
+					},
+				},
+			}),
+		[prefersDarkMode]
+	);
+	
 	const [view, setView] = React.useState("toDate");
+	// const [theme, setTheme] = React.useState(lightTheme);
 
 	const clickHandler = () => {
 		if (view === "toDate") {
@@ -25,17 +40,20 @@ function App() {
 	};
 
 	return (
-		<ThemeProvider theme={darkTheme}>
-			<div className="App">
+		<ThemeProvider theme={theme}>
+			<Box sx={{ 
+				backgroundColor: "background.default",
+				color: "text.primary", 
+				}} className="App">
 				<section className="App-header">
 					<img src={modeButton} className="logoButton" alt="Change mode." onClick={clickHandler} />
 				</section>
 				{view === "toDate" ? (
-					<ToDate setView={setView} />
+					<ToDate setView={setView} theme={theme}/>
 				) : (
 					<ToDays setView={setView} />
 				)}
-			</div>
+			</Box>
 		</ThemeProvider>
 	);
 }
