@@ -21,7 +21,7 @@ function App() {
 						default: prefersDarkMode ? "#302d38" : "#fafafa",
 					},
 					text: {
-						primary: prefersDarkMode ? "#e6e1e5" : "#302d38",
+						primary: prefersDarkMode ? "#e6e1e5" : "#49454f",
 					},
 				},
 			}),

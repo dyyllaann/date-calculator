@@ -8,7 +8,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { MobileDatePicker } from "@mui/x-date-pickers";
 import { Switch, Typography } from "@mui/material";
 
 function ToDate(props) {
@@ -38,7 +39,7 @@ function ToDate(props) {
 					Enter start date
 				</Typography>
 				<LocalizationProvider dateAdapter={AdapterMoment}>
-					<DatePicker
+					<MobileDatePicker
 						className="input-container--input"
 						label="Date"
 						value={startDate || null}
@@ -89,10 +90,10 @@ function ToDate(props) {
 							})
 						}
 					/>
-					<Typography color="text.primary">Next Business Day</Typography>
+					<Typography color="text.primary">Next business day</Typography>
 				</div>
 				<div className="options-container--actions">
-					<Button className="optionsButton">Settings</Button>
+					{/* <Button className="optionsButton">Settings</Button> */}
 					<Button className="optionsButton" onClick={optionsHandler}>
 						OK
 					</Button>

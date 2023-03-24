@@ -7,7 +7,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { MobileDatePicker } from "@mui/x-date-pickers";
 import { Switch, Typography } from "@mui/material";
 
 function ToDays() {
@@ -27,15 +28,24 @@ function ToDays() {
 
 	const optionsHandler = () => {
 		let days = calculcateDays(startDate, endDate);
-		setResult(`${days} days`);
+		days === 1 ? setResult(`${days} day`) : setResult(`${days} days`);
 	};
 
 	return (
 		<section className="flex-column">
 			<div className="input-container">
-				<span className="section-title">Enter start date</span>
+				<Typography color="text.primary" sx={{ fontSize: "2em" }}>
+					Enter start date
+				</Typography>
 				<LocalizationProvider dateAdapter={AdapterMoment}>
-					<DatePicker
+					{/* <DatePicker
+						className="input-container--input"
+						label="Date"
+						value={startDate || null}
+						onChange={startDateHandler}
+						renderInput={(params) => <TextField {...params} sx={{ mt: 2 }} />}
+					/> */}
+					<MobileDatePicker
 						className="input-container--input"
 						label="Date"
 						value={startDate || null}
@@ -45,9 +55,17 @@ function ToDays() {
 				</LocalizationProvider>
 			</div>
 			<div className="input-container input-container--end-date-input">
-				<span className="section-title">Enter end date</span>
+				<Typography color="text.primary" sx={{ fontSize: "2em" }}>
+					Enter end date
+				</Typography>
 				<LocalizationProvider dateAdapter={AdapterMoment}>
-					<DatePicker
+					{/* <DatePicker
+						className="input-container--input"
+						label="Date"
+						value={endDate || null}
+						onChange={endDateHandler}
+						renderInput={(params) => <TextField {...params} sx={{ mt: 2 }} />} */}
+					<MobileDatePicker
 						className="input-container--input"
 						label="Date"
 						value={endDate || null}
@@ -66,18 +84,28 @@ function ToDays() {
 					<Typography color="text.primary">Skip holidays</Typography>
 				</div>
 				<div className="options-container--option hidden">
-					<Switch/>
+					<Switch />
 					<Typography color="text.primary">Next Business Day</Typography>
 				</div>
 				<div className="options-container--actions">
-					<Button className="optionsButton">Settings</Button>
+					{/* <Button className="optionsButton">Settings</Button> */}
 					<Button className="optionsButton" onClick={optionsHandler}>
 						OK
 					</Button>
 				</div>
 			</div>
 			<div className="output-container">
-				<span className="section-title output-container--output">{result}</span>
+				<Typography
+					sx={{
+						fontSize: "150%",
+						margin: "auto 0",
+						flex: 1,
+						textAlign: "center",
+					}}
+					color="text.primary"
+				>
+					{result}
+				</Typography>
 			</div>
 		</section>
 	);
