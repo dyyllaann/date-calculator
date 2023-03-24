@@ -59,15 +59,15 @@ function ToDate() {
 			<div className="options-container">
 				<div className="options-container--option">
 					<Switch 
-						checked={skipWeekends}
-						onChange={() => setOptions({ ...options, skipWeekends: !skipWeekends })}
+						checked={options.skipWeekends}
+						onChange={() => setOptions({ ...options, skipWeekends: !options.skipWeekends })}
 					/>
 					<Typography color="text.primary">Skip weekends</Typography>
 				</div>
 				<div className="options-container--option">
 					<Switch 
-						checked={skipHolidays}
-						onChange={() => setOptions({ ...options, skipHolidays: !skipHolidays })}
+						checked={options.skipHolidays}
+						onChange={() => setOptions({ ...options, skipHolidays: !options.skipHolidays })}
 					/>
 					<Typography color="text.primary">
 						Skip holidays
@@ -75,8 +75,8 @@ function ToDate() {
 				</div>
 				<div className="options-container--option">
 					<Switch 
-						checked={nextBusinessDay}
-						onChange={() => setOptions({ ...options, nextBusinessDay: !nextBusinessDay })}
+						checked={options.nextBusinessDay}
+						onChange={() => setOptions({ ...options, nextBusinessDay: !options.nextBusinessDay })}
 					/>
 					<Typography color="text.primary">
 						Next Business Day
