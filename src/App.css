@@ -116,11 +116,3 @@ span.section-title {
   display: flex;
   text-align: center;
 }
-
-
-span.output-container--output {
-  font-size: 150%;
-  margin: auto 0;
-  flex: 1;
-  text-align: center;
-}

@@ -34,7 +34,7 @@ function ToDate(props) {
   return (
 		<section className="flex-column">
 			<div className="input-container">
-				<Typography color="text.primary" sx={{ fontSize: '2em' }}>
+				<Typography color="text.primary" sx={{ fontSize: "2em" }}>
 					Enter start date
 				</Typography>
 				<LocalizationProvider dateAdapter={AdapterMoment}>
@@ -48,7 +48,7 @@ function ToDate(props) {
 				</LocalizationProvider>
 			</div>
 			<div className="input-container input-container--days-input">
-				<Typography color="text.primary" sx={{ fontSize: '2em' }}>
+				<Typography color="text.primary" sx={{ fontSize: "2em" }}>
 					Enter number of days
 				</Typography>
 				<TextField
@@ -62,39 +62,54 @@ function ToDate(props) {
 			</div>
 			<div className="options-container">
 				<div className="options-container--option">
-					<Switch 
+					<Switch
 						checked={options.skipWeekends}
-						onChange={() => setOptions({ ...options, skipWeekends: !options.skipWeekends })}
+						onChange={() =>
+							setOptions({ ...options, skipWeekends: !options.skipWeekends })
+						}
 					/>
 					<Typography color="text.primary">Skip weekends</Typography>
 				</div>
 				<div className="options-container--option">
-					<Switch 
+					<Switch
 						checked={options.skipHolidays}
-						onChange={() => setOptions({ ...options, skipHolidays: !options.skipHolidays })}
+						onChange={() =>
+							setOptions({ ...options, skipHolidays: !options.skipHolidays })
+						}
 					/>
-					<Typography color="text.primary">
-						Skip holidays
-					</Typography>
+					<Typography color="text.primary">Skip holidays</Typography>
 				</div>
 				<div className="options-container--option">
-					<Switch 
+					<Switch
 						checked={options.nextBusinessDay}
-						onChange={() => setOptions({ ...options, nextBusinessDay: !options.nextBusinessDay })}
+						onChange={() =>
+							setOptions({
+								...options,
+								nextBusinessDay: !options.nextBusinessDay,
+							})
+						}
 					/>
-					<Typography color="text.primary">
-						Next Business Day
-					</Typography>
+					<Typography color="text.primary">Next Business Day</Typography>
 				</div>
 				<div className="options-container--actions">
 					<Button className="optionsButton">Settings</Button>
-					<Button className="optionsButton" onClick={optionsHandler}>OK</Button>
+					<Button className="optionsButton" onClick={optionsHandler}>
+						OK
+					</Button>
 				</div>
 			</div>
 			<div className="output-container">
-				<span className="section-title output-container--output">
+				<Typography
+					sx={{
+						fontSize: "150%",
+						margin: "auto 0",
+						flex: 1,
+						textAlign: "center",
+					}}
+					color="text.primary"
+				>
 					{result}
-				</span>
+				</Typography>
 			</div>
 		</section>
 	);

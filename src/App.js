@@ -11,7 +11,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 function App() {
 	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-	
+
 	const theme = React.useMemo(
 		() =>
 			createTheme({
